@@ -25,7 +25,17 @@ Route::get('/', function () {
     ]);
 });
 
+// Route::get('/about',function(){
+//    return redirect('/contact');    
+// });
+Route::view('/about', 'about');
+Route::get('/contact/{id}',function($id){
+   return view('contact');
+});
 
+Route::get('/country', function () {
+    return view('country');
+})->middleware('country');
 
 
 
