@@ -1,8 +1,9 @@
 <h1>
     Contact page
 </h1>
-<ul>
-    <li class="list-item"><a href="{{ url('about')}}">about</a></li>
-    <li class="list-item"><a href="{{ url('contact')}}">contact </a></li>
-    <li class="list-item"><a href="{{ url('/')}}">back </a></li>
- </ul>
+<form action="{{route('student.store')}}" method="POST">
+    @csrf
+    <input type="text" name="name" placeholder="enter your name" id=""> <br>
+    <input type="text" name="email" placeholder="enter your email" id=""><br>
+    <button type="submit">submit</button>
+</form>

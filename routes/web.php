@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Exampole\FirstController as ExampoleFirstController;
+use App\Http\Controllers\FirstController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -25,19 +27,27 @@ Route::get('/', function () {
     ]);
 });
 
+
 // Route::get('/about',function(){
 //    return redirect('/contact');    
 // });
-Route::view('/about', 'about');
-Route::get('/contact/{id}',function($id){
-   return view('contact');
-});
+// Route::get('/profile', [ProfileController::class, 'edit']);
+// Route::get('/contact/{id}',function($id){
+//    return view('contact');
+// });
 
-Route::get('/country', function () {
-    return view('country');
-})->middleware('country');
+// Route::view('/about', 'about');
+// Route::get('/contact/{id}',function($id){
+//    return view('contact');
+// }); 
 
-
+// Route::get('/country', function () {
+//     return view('country');
+// })->middleware('country');
+// Route:view('/country','country');
+Route::get('/contact',[FirstController::class, 'index']); 
+Route::get('/about',[FirstController::class, 'about']);
+Route::post('/student-store',[FirstController::class, 'store'])->name('student.store');
 
 
 
