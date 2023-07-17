@@ -47,7 +47,8 @@ Route::get('/', function () {
 // Route:view('/country','country');
 Route::get('/contact',[FirstController::class, 'index']); 
 Route::get('/about',[FirstController::class, 'about']);
-Route::post('/student-store',[FirstController::class, 'store'])->name('student.store');
+//Route::post('/student-store',[FirstController::class, 'storee'])->name('student.store');
+Route::post('/store/contact',[FirstController::class, 'store'])->name('store.contact');
 
 
 
