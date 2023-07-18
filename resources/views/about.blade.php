@@ -6,3 +6,7 @@
     <li class="list-item"><a href="{{ url('contact')}}">contact </a></li>
     <li class="list-item"><a href="{{ url('/')}}">back </a></li>
  </ul>
+ <p>
+
+   hye {{Auth::id()}}
+ </p>

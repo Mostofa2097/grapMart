@@ -46,7 +46,7 @@ Route::get('/', function () {
 // })->middleware('country');
 // Route:view('/country','country');
 Route::get('/contact',[FirstController::class, 'index']); 
-Route::get('/about',[FirstController::class, 'about']);
+Route::get('/about',[FirstController::class, 'about'])->middleware('auth');
 //Route::post('/student-store',[FirstController::class, 'storee'])->name('student.store');
 Route::post('/store/contact',[FirstController::class, 'store'])->name('store.contact');
 
