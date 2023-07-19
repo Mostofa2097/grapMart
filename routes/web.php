@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\ClassController;
+use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Exampole\FirstController as ExampoleFirstController;
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\ProfileController;
@@ -50,6 +52,15 @@ Route::get('/about',[FirstController::class, 'about'])->middleware('auth');
 //Route::post('/student-store',[FirstController::class, 'storee'])->name('student.store');
 Route::post('/store/contact',[FirstController::class, 'store'])->name('store.contact');
 
+
+
+
+
+
+Route::get('/class',[App\Http\Controllers\Admin\ClassController::class, 'index'])->name('class.index');
+
+
+Route::get('/students',[App\Http\Controllers\Admin\StudentController::class, 'index'])->name('student.index');
 
 
 
