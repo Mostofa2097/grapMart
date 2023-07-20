@@ -19,7 +19,7 @@
     <p> hye {{Auth::id()}}</p>
    
    <a href="{{route('class.index')}}" class="btn btn-info btn-sm">classes</a>
-   <a href="{{route('student.index')}}" class="btn btn-info btn-sm">students</a>
+   <a href="{{route('students.index')}}" class="btn btn-info btn-sm">students</a>
   
 
 

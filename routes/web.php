@@ -47,20 +47,30 @@ Route::get('/', function () {
 //     return view('country');
 // })->middleware('country');
 // Route:view('/country','country');
-Route::get('/contact',[FirstController::class, 'index']); 
-Route::get('/about',[FirstController::class, 'about'])->middleware('auth');
+Route::get('/contact', [FirstController::class, 'index']);
+Route::get('/about', [FirstController::class, 'about'])->middleware('auth');
 //Route::post('/student-store',[FirstController::class, 'storee'])->name('student.store');
-Route::post('/store/contact',[FirstController::class, 'store'])->name('store.contact');
+Route::post('/store/contact', [FirstController::class, 'store'])->name('store.contact');
 
 
 
 
 
 
-Route::get('/class',[App\Http\Controllers\Admin\ClassController::class, 'index'])->name('class.index');
+Route::get('/class', [App\Http\Controllers\Admin\ClassController::class, 'index'])->name('class.index');
+Route::get('/create/class', [App\Http\Controllers\Admin\ClassController::class, 'create'])->name('create.class');
+Route::post('store/class', [App\Http\Controllers\Admin\ClassController::class, 'store'])->name('store.class');
+Route::get('class/delete/{id}', [App\Http\Controllers\Admin\ClassController::class, 'delete'])->name('class.delete');
+Route::get('class/edit/{id}', [App\Http\Controllers\Admin\ClassController::class, 'edit'])->name('class.edit');
+Route::post('update/class/{id}', [App\Http\Controllers\Admin\ClassController::class, 'update'])->name('update.class');
 
 
-Route::get('/students',[App\Http\Controllers\Admin\StudentController::class, 'index'])->name('student.index');
+Route::get('/students', [App\Http\Controllers\Admin\StudentController::class, 'index'])->name('student.index');
+
+//__resource_route
+Route::resource('students',StudentController::class);
+
+
 
 
 
@@ -74,4 +84,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

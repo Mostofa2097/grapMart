@@ -11,10 +11,12 @@
         <div class="row ">
             <div class="col-md 4">
                 <div class="card">
-                     <div class="card-header">{{__('All class')}}</div>
+                     <div class="card-header">{{__('All class')}}
+                        <a href="{{route('create.class')}}" class="btn btn-sm btn-primary" style="float:right">Add new</a>
+
+                    </div>
                      
                      <div class="card-body">
-                        <a href="" class="btn btn-sm btn-primary" style="float:right">Add new</a>
                         <table class="table table-responsive table-strio">
                             <thead>
                                 <tr>
@@ -31,8 +33,8 @@
                                     <td>{{++$key}}</td>
                                     <td>{{$row->class_name}} </td>
                                     <td>
-                                        <a href="" class="btn btn-sm btn-info">edit</a>
-                                        <a href="" class="btn btn-sm btn-danger">delete</a>
+                                        <a href="{{route('class.edit',$row->id)}}" class="btn btn-sm btn-info">edit</a>
+                                        <a href="{{route('class.delete',$row->id)}}" class="btn btn-sm btn-danger">delete</a>
                                     </td>
                                 </tr>
                                   @endforeach
