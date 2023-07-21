@@ -11,7 +11,7 @@
         <div class="row ">
             <div class="col-md 4">
                 <div class="card">
-                     <div class="card-header">{{__('All class')}}
+                     <div class="card-header">{{__('create class')}}
                         <a href="{{route('class.index')}}" class="btn btn-sm btn-primary" style="float:right">all class</a> 
                     </div>
                      <div class="card-body">

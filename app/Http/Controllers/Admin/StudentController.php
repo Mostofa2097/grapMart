@@ -23,7 +23,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        $classes = DB::table('classes')->get();
+        return view('Admin.students.create',compact('classes'));
     }
 
     /**
@@ -31,7 +32,24 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //  $request->validate([
+        //     'class_id' => 'required',
+        //     'name' => 'required',
+        //     'phone' => 'required',
+        //     'roll' => 'required',
+        //  ]);
+   
+         $data = array(
+            // 'class_id' => $request->class_id,
+            'name' => $request->name,
+            'roll' => $request->roll,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
+         );
+   
+         DB::table('students')->insert($data);
+         return redirect()->back();
     }
 
     /**
@@ -47,7 +65,8 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+      $students = DB::table('students')->where('id',$id)->first();
+      return view('admin.students.edit',compact('students'));  
     }
 
     /**
@@ -55,7 +74,17 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = array(
+            // 'class_id' => $request->class_id,
+            'name' => $request->name,
+            'roll' => $request->roll,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
+         );
+   
+         DB::table('students')->where('id',$id)->insert($data);
+         return redirect()->back();
     }
 
     /**
@@ -63,6 +92,7 @@ class StudentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+       DB::table('students')->where('id',$id)->delete();
+       return redirect()->back();
     }
 }
