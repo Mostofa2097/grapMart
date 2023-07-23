@@ -39,7 +39,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Student Phone</label>
-                                <input type="text" name="Phone" class="form-control" value="{{$students->phone}}">
+                                <input type="text" name="phone" class="form-control" value="{{$students->phone}}">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Student address</label>
@@ -48,7 +48,7 @@
 
                             
                             
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">update</button>
                           </form>
                         
 

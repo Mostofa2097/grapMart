@@ -83,7 +83,7 @@ class StudentController extends Controller
             'address' => $request->address,
          );
    
-         DB::table('students')->where('id',$id)->insert($data);
+         DB::table('students')->where('id',$id)->update($data);
          return redirect()->back();
     }
 
